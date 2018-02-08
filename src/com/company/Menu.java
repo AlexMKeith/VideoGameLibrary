@@ -24,7 +24,8 @@ public class Menu {
 
             switch (input.nextInt()) {
                 case 1:
-                    //Add a game
+                    System.out.println("What game would you like to add?");
+
                     break;
                 case 2:
                     //Remove a game
