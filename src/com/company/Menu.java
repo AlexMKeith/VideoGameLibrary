@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Menu {
 
     private Scanner input = new Scanner(System.in);
+    private Library library = new Library(this);
 
 
     //menu to prompt user for library options
@@ -24,11 +25,19 @@ public class Menu {
 
             switch (input.nextInt()) {
                 case 1:
-                    System.out.println("What game would you like to add?");
+                    System.out.println("You have chosen to add a game. \n" +
+                            "What is the title of this new game?");
+                    input.nextLine();
+                    Game game = new Game(input.nextLine());
+                    System.out.println("You have added " + game.getTitle() + " to your library, this game can now be checked out.");
+                    library.addGame(game);
 
                     break;
                 case 2:
                     //Remove a game
+                    System.out.println("You have chosen to remove a game from your library. \n" +
+                            "Here is a list of games, type the number of the one you want to remove.");
+                    library.removeGame(input.nextInt());
                     break;
                 case 3:
                     //Look at library

@@ -5,12 +5,19 @@ public class Game extends Library {
     private String title;
     private String dueDate;
 
+    public Game(Menu menu) {
+        super(menu);
+    }
+
     public Game(String title) {
         this.title = title;
         dueDate = "";
+
     }
 
-    public Game() {
+    public Game(Menu menu, String dueDate) {
+        super(menu);
+        this.dueDate = dueDate;
     }
 
     public String getTitle() {
