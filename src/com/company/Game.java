@@ -1,12 +1,16 @@
 package com.company;
 
-public class Game extends Library {
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+public class Game {
 
     private String title;
     private String dueDate;
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
 
     public Game(Menu menu) {
-        super(menu);
+        super(Menu);
     }
 
     public Game(String title) {
@@ -16,7 +20,7 @@ public class Game extends Library {
     }
 
     public Game(Menu menu, String dueDate) {
-        super(menu);
+        super(Menu);
         this.dueDate = dueDate;
     }
 
