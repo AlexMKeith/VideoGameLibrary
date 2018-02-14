@@ -49,7 +49,7 @@ public class Menu {
                     System.out.println("You have chosen to checkout a game from your library. \n" +
                             "Here is a list of games, type the number of the one you want to checkout.");
                             library.viewGameLibrary();
-                    library.checkoutGame();
+                    library.checkoutGame(input.nextInt() - 1);
                     break;
                 case 5:
                     //Check in a game
