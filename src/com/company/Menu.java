@@ -31,19 +31,25 @@ public class Menu {
                     Game game = new Game(input.nextLine());
                     System.out.println("You have added " + game.getTitle() + " to your library, this game can now be checked out.");
                     library.addGame(game);
-
                     break;
                 case 2:
                     //Remove a game
                     System.out.println("You have chosen to remove a game from your library. \n" +
                             "Here is a list of games, type the number of the one you want to remove.");
-                    library.removeGame(input.nextInt());
+                    library.viewGameLibrary();
+                    library.removeGame(input.nextInt() - 1);
                     break;
                 case 3:
                     //Look at library
+                    library.viewGameLibrary();
+                    startMenu();
                     break;
                 case 4:
                     //Check out a game
+                    System.out.println("You have chosen to checkout a game from your library. \n" +
+                            "Here is a list of games, type the number of the one you want to checkout.");
+                            library.viewGameLibrary();
+                    library.checkoutGame();
                     break;
                 case 5:
                     //Check in a game
@@ -53,6 +59,7 @@ public class Menu {
                     break;
                 case 7:
                     //Exit program
+                    System.exit(0);
                     break;
                 default:
                     break;

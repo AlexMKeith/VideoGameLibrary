@@ -11,6 +11,12 @@ public class Library {
     private List<Game> gameLibrary = new ArrayList<Game>();
     private List<Game> checkedoutGames = new ArrayList<Game>();
     private SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:mm");
+    private int position;
+
+    public Library(Menu menu, Menu home) {
+        this.menu = menu;
+
+    }
 
     protected void addGame () {
 
@@ -29,6 +35,7 @@ public class Library {
     }
     //Code goes here to add game to where ever we are saving game things to
     protected void removeGame(int gameIndex) {
+        gameLibrary.remove(gameIndex);
         gameIndex -= gameIndex;
         System.out.println("This game has been removed from your library.");
         menu.startMenu();
@@ -51,8 +58,20 @@ public class Library {
 
     }
 
-    protected void checkInGame() {
+    protected void checkInGame(int gameIndex) {
+        gameIndex += gameIndex;
+        Game game = gameLibrary.get(gameIndex);
 
+    }
+    protected void viewGameLibrary() {
+
+        int position = 1;
+
+        for (int i = 0; i < gameLibrary.size(); i++) {
+            System.out.println(position + ". " + gameLibrary.get(i).getTitle());
+            position++;
+
+        }
     }
 
 

@@ -10,7 +10,6 @@ public class Game {
     private SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
 
     public Game(Menu menu) {
-        super(Menu);
     }
 
     public Game(String title) {
@@ -20,7 +19,6 @@ public class Game {
     }
 
     public Game(Menu menu, String dueDate) {
-        super(Menu);
         this.dueDate = dueDate;
     }
 
