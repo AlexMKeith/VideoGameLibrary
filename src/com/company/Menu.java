@@ -34,34 +34,57 @@ public class Menu {
                     break;
                 case 2:
                     //Remove a game
-                    if (Library.gameLibrary.isEmpty)
-                    System.out.println("You have chosen to remove a game from your library. \n" +
-                            "Here is a list of games, type the number of the one you want to remove.");
-                    library.viewGameLibrary();
-                    library.removeGame(input.nextInt() - 1);
+                    if (library.gameLibrary.isEmpty()) {
+                        System.out.println("You have no games in your library. Try again.");
+                    } else {
+                        System.out.println("You have chosen to remove a game from your library. \n" +
+                                "Here is a list of games, type the number of the one you want to remove.");
+                        library.viewGameLibrary();
+                        library.removeGame(input.nextInt() - 1);
+                    }
+
+                    startMenu();
                     break;
                 case 3:
                     //Look at library
-                    library.viewGameLibrary();
+                    if (library.gameLibrary.isEmpty()) {
+                        System.out.println("Your game library is empty, select something else.");
+                    } else {
+                        library.viewGameLibrary();
+                    }
                     startMenu();
                     break;
                 case 4:
                     //Check out a game
-                    System.out.println("You have chosen to checkout a game from your library. \n" +
-                            "Here is a list of games, type the number of the one you want to checkout.");
-                            library.viewGameLibrary();
-                    library.checkoutGame(input.nextInt() - 1);
+                    if (library.gameLibrary.isEmpty()) {
+                        System.out.println("You have no games in your library. Try again.");
+                    } else {
+                        System.out.println("You have chosen to checkout a game from your library. \n" +
+                                "Here is a list of games, type the number of the one you want to checkout.");
+                        library.viewGameLibrary();
+                        library.checkoutGame(input.nextInt() - 1);
+                    }
+                    startMenu();
                     break;
                 case 5:
                     //Check in a game
-                    System.out.println("You have chosen to checkin a game to your library. \n" +
-                            "Here is a list of games, type the number of the one you want to checkin.");
-                    library.viewCheckedoutGames();
-                    library.checkInGame(input.nextInt() - 1);
+                    if (library.checkedoutGames.isEmpty()) {
+                        System.out.println("You have no games checked out. Try again.");
+                    } else {
+                        System.out.println("You have chosen to check in a game to your library. \n" +
+                                "Here is a list of games, type the number of the one you want to check in.");
+                        library.viewCheckedoutGames();
+                        library.checkInGame(input.nextInt() - 1);
+                    }
+                    startMenu();
                     break;
                 case 6:
                     //View checked out games
-                    library.viewCheckedoutGames();
+                    if (library.checkedoutGames.isEmpty()) {
+                        System.out.println("You have no checked out games");
+                    } else {
+                        library.viewCheckedoutGames();
+                    }
                     startMenu();
                     break;
                 case 7:

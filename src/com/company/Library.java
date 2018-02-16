@@ -8,15 +8,15 @@ import java.util.List;
 public class Library {
 
     public final Menu menu;
-    private List<Game> gameLibrary = new ArrayList<Game>();
-    private List<Game> checkedoutGames = new ArrayList<Game>();
+    protected List<Game> gameLibrary = new ArrayList<Game>();
+    protected List<Game> checkedoutGames = new ArrayList<Game>();
     private SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:mm");
     private int position;
 
-    public Library(Menu menu, Menu home) {
-        this.menu = menu;
+//    public Library(Menu menu, Menu home) {
+//        this.menu = menu;
 
-    }
+//    }
 
     protected void addGame () {
 
