@@ -34,6 +34,7 @@ public class Menu {
                     break;
                 case 2:
                     //Remove a game
+                    if (Library.gameLibrary.isEmpty)
                     System.out.println("You have chosen to remove a game from your library. \n" +
                             "Here is a list of games, type the number of the one you want to remove.");
                     library.viewGameLibrary();
@@ -53,9 +54,15 @@ public class Menu {
                     break;
                 case 5:
                     //Check in a game
+                    System.out.println("You have chosen to checkin a game to your library. \n" +
+                            "Here is a list of games, type the number of the one you want to checkin.");
+                    library.viewCheckedoutGames();
+                    library.checkInGame(input.nextInt() - 1);
                     break;
                 case 6:
                     //View checked out games
+                    library.viewCheckedoutGames();
+                    startMenu();
                     break;
                 case 7:
                     //Exit program

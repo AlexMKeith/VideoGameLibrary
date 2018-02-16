@@ -49,18 +49,31 @@ public class Library {
 
         Calendar calendar = Calendar.getInstance();
         System.out.println("You checked this game out on: " + dateFormat.format(calendar.getTime()));
-        calendar.add(Calendar.DAY_OF_YEAR,3);
+        calendar.add(Calendar.DAY_OF_YEAR,7);
         System.out.println("It is due back on: " + dateFormat.format(calendar.getTime()));
         game.setDueDate(dateFormat.format(calendar.getTime()));
 
-        gameLibrary.remove(gameIndex);
+        gameLibrary.remove(game);
         menu.startMenu();
 
     }
 
     protected void checkInGame(int gameIndex) {
-        gameIndex += gameIndex;
-        Game game = gameLibrary.get(gameIndex);
+
+        Game game = checkedoutGames.get(gameIndex);
+
+        gameLibrary.add(game);
+
+        Calendar calendar = Calendar.getInstance();
+        System.out.println("You checked this game in on: " + dateFormat.format(calendar.getTime()));
+
+//        if (game.getDueDate().compareTo(dateFormat.format(calendar.getTime())) = 0) {
+//            System.out.println("Your game is late, you must pay a fine of 99.99$");
+//        }
+
+
+        checkedoutGames.remove(game);
+        menu.startMenu();
 
     }
     protected void viewGameLibrary() {
@@ -73,7 +86,15 @@ public class Library {
 
         }
     }
+    protected void viewCheckedoutGames() {
 
+        int position = 1;
+
+        for (int i = 0; i < checkedoutGames.size(); i++) {
+            System.out.println(position + ". " + checkedoutGames.get(i).getTitle());
+            position++;
+        }
+    }
 
 
 }
