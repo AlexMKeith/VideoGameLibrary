@@ -6,6 +6,8 @@ import java.util.Scanner;
 public class Menu {
 
     private Scanner input = new Scanner(System.in);
+
+    /**Good technique to ensure you're using the same library/menu */
     private Library library = new Library(this);
 
 
@@ -21,6 +23,10 @@ public class Menu {
                 "6. View checked out games \n" +
                 "7. Exit the program");
 
+
+        /**To avoid using a try/catch here, I recommend using a String, so case '1', instead of case 1, that way you can just make
+         * your default tell the user that they need to enter a valid command and use recursion to bring them back. I only use
+         * ints for mathematical operations.*/
         try {
 
             switch (input.nextInt()) {
@@ -96,6 +102,7 @@ public class Menu {
 
             }
         } catch (InputMismatchException ime) {
+            /**I, personally would have this in the default of my try/catch */
             input.nextLine();
             System.out.println("Select a number from 1 - 7");
             startMenu();

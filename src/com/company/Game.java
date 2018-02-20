@@ -9,6 +9,7 @@ public class Game {
     private String dueDate;
     private SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
 
+    /**A Game with a menu? Not sure that a game would be made from this. */
     public Game(Menu menu) {
     }
 

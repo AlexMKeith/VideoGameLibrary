@@ -8,6 +8,9 @@ import java.util.List;
 public class Library {
 
     public final Menu menu;
+
+    /**It's good practice not to instantiate your objects at the top of a class. As it takes away your power to decide when you
+     * want your objects instantiated. Look at my init() method in the arraylist workshop. */
     protected List<Game> gameLibrary = new ArrayList<Game>();
     protected List<Game> checkedoutGames = new ArrayList<Game>();
     private SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:mm");
@@ -59,6 +62,7 @@ public class Library {
     }
 
     protected void checkInGame(int gameIndex) {
+        /**Remove useless, commented-out code. */
 
         Game game = checkedoutGames.get(gameIndex);
 
